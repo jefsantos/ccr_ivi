@@ -1,22 +1,31 @@
 package com.ivi.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.ivi.repository.CoordenadasRepository;
+import com.ivi.services.ApiRotasBrasil;
 
-@Controller
-@RequestMapping(name="/rotas")
+@RestController
+@RequestMapping("/rotas")
 public class BuscarRotas {
 	
 	
 	
-	@Autowired
-	CoordenadasRepository coordenadaRepository;
+	@GetMapping("/calculaRota")
+	public String findRout() {
+		
+		ApiRotasBrasil api =  ApiRotasBrasil.getInstance();
+		
+		api.doLogin();
+		
+		System.out.println(api.doRequest("Posicao"));
+		return (api.doRequest("posição"));
+	}
+	
+//	
+//	@Autowired
+//	CoordenadasRepository coordenadaRepository;
 	
 	
 	
@@ -27,12 +36,19 @@ public class BuscarRotas {
 	 * @return 
 	 * @return
 	 */
-	@GetMapping(value="/busca/{id_Coordenada}")
-	public @ResponseBody <Coordenadas> Object buscarRotas(@PathVariable("id_Coordenada")int id_Coordenada){
-		return coordenadaRepository.findById((id_Coordenada));
-		
-	}
+//	@GetMapping(value="/busca")
+//	public @ResponseBody <Coordenadas> Object buscarRotas(@PathVariable("id_Coordenada")int id_Coordenada){
+//		ApiRotasBrasil api =  ApiRotasBrasil.getInstance();
+//		api.doLogin();
+//		System.out.println(api.doRequest("Posicao"));
+//		return coordenadaRepository.findById((id_Coordenada));
+//		
+//	}
 
+
+	
+	
+	
 
 
 
