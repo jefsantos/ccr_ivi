@@ -35,43 +35,43 @@ public class BuscarRotas {
 	 * @return 
 	 * @return
 	 */
-//	@GetMapping(value="/acinaPanico")
-//	public @ResponseBody <Coordenadas> Object buscarRotas(@PathVariable("id_numerosTel")int id_numerosTel){
-//		aletaPanico api_panico =  aletaPanico.getInstance();
-//		api.doLogin();
-//		geoLoc.setlocation = new Coordenadas();
-//		return responseEntity.body().ok
-//		
-//	}
+	@GetMapping(value="/acinaPanico")
+	public @ResponseBody <Coordenadas> Object buscarRotas(@PathVariable("id_numerosTel")int id_numerosTel){
+		aletaPanico api_panico =  aletaPanico.getInstance();
+		api.doLogin();
+		geoLoc.setlocation = new Coordenadas();
+		return responseEntity.body().ok
+		
+	}
 	
-//	@Autowired
-//	CodePanicFemaleService codePanicFemaleService; 
-//	
-//	
-//@RequestMapping(value="/index", method = RequestMethod.GET)
-//	public ModelAndView getIndex() {
-//		ModelAndView mv = new ModelAndView("services");
-//		List<CodePanicFemaleService> codePanicFemaleService = BaseServices();
-//		
-//		mv.addObject("services", service);
-//		
-//		return mv;
-//	}
-//
+	@Autowired
+	CodePanicFemaleService codePanicFemaleService; 
+	
+	
+@RequestMapping(value="/index", method = RequestMethod.GET)
+	public ModelAndView getIndex() {
+		ModelAndView mv = new ModelAndView("services");
+		List<CodePanicFemaleService> codePanicFemaleService = BaseServices();
+		
+		mv.addObject("services", service);
+		
+		return mv;
+	}
 
-//	@Autowired
-//	CodePanicFemaleService codePanicFemaleService; 
-//	
-//	
-//@RequestMapping(value="/routSecurity", method = RequestMethod.GET)
-//	public ModelAndView getIndex() {
-//		ModelAndView mv = new ModelAndView("routes");
-//		List<chooseRouts> cr = BaseServices
-//		
-//		mv.addObject("services", cr);
-//		
-//		return mv;
-//	}	
+
+	@Autowired
+	CodePanicFemaleService codePanicFemaleService; 
+	
+	
+@RequestMapping(value="/routSecurity", method = RequestMethod.GET)
+	public ModelAndView getIndex() {
+		ModelAndView mv = new ModelAndView("routes");
+		List<chooseRouts> cr = BaseServices
+		
+		mv.addObject("services", cr);
+		
+		return mv;
+	}	
 	
 	
 
